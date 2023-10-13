@@ -12,6 +12,8 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     private float countdown = 3f;
 
+
+
     public TMP_Text waveCountDownText;
 
 
@@ -23,7 +25,7 @@ public class WaveSpawner : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
-            
+
         }
 
         countdown -= Time.deltaTime;
@@ -40,12 +42,11 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy();
             yield return new WaitForSeconds(0.4f);
         }
-        
+
     }
 
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnpoint.position, spawnpoint.rotation);
     }
-
 }
