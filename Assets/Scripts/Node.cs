@@ -8,8 +8,8 @@ public class Node : MonoBehaviour {
 
     public BuildManager buildManager;
 
-    public Renderer rend;
-    public Color startColor;
+    private Renderer rend;
+    private Color startColor;
 
     private void Start()
     {
