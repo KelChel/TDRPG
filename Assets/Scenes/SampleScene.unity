@@ -4114,7 +4114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTurretPrefab: {fileID: 8588197123989868832, guid: 39deafdeba6e5e24499e9ada356f1985, type: 3}
-  secondTurretPrefab: {fileID: 0}
+  secondTurretPrefab: {fileID: 7326500883698511348, guid: 92fd8928b843490458a4ce3414b61900, type: 3}
   thirdTurretPrefab: {fileID: 0}
   fourthTurretPrefab: {fileID: 0}
 --- !u!4 &490757603 stripped

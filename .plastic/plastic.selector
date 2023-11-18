@@ -1,0 +1,4 @@
+repository "TDRPG@IDLE_TM@cloud"
+  path "/"
+    br "/main"
+    co "/main"
