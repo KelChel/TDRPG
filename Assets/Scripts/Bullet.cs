@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
+        Vector2 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
 
         transform.Translate(dir.normalized * distanceThisFrame,Space.World);
 
-       // transform.LookAt(target);
+        //transform.LookAt(dir);
     }
 
     void HitTarget()

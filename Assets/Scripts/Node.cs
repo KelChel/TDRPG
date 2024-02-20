@@ -3,7 +3,7 @@ using UnityEngine;
 public class Node : MonoBehaviour {
 
     public Color hoverColor;
-
+    public GameObject node;
     private GameObject turret;
 
     private Renderer rend;
@@ -51,6 +51,6 @@ public class Node : MonoBehaviour {
 
         turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
         // Затем ресетнуть турель для постройки и поменять кнопку на скилл.
-
+        node.SetActive(false);
     }
 }
