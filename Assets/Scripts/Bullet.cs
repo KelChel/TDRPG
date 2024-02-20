@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Vector2 dir = target.position - transform.position;
+        Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
@@ -34,7 +34,8 @@ public class Bullet : MonoBehaviour
 
         transform.Translate(dir.normalized * distanceThisFrame,Space.World);
 
-        //transform.LookAt(dir);
+        float angle = Vector3.SignedAngle(transform.up, dir, transform.forward);
+        transform.Rotate(0f,0f, angle+90f);
     }
 
     void HitTarget()
