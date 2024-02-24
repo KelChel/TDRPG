@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour
 
     [Header("Attributes")]
 
-    
+    public float damage = 50f;
     public float range = 1f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
@@ -32,6 +32,7 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StatsUpdate();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -92,6 +93,7 @@ public class Turret : MonoBehaviour
 
         if (bullet != null)
         {
+            bullet.damage = (int)damage;
             bullet.Seek(target);
         }
     }
@@ -101,4 +103,10 @@ public class Turret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    public void StatsUpdate()
+    {
+        //damage = bulletPrefab.GetComponent<Bullet>().damage;
+        damage = PlayerPrefs.GetInt("Turret1Damage");
+    } 
 }

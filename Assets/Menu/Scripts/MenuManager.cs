@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject bestiary;
     public GameObject authors;
     public GameObject hero;
+    public GameObject upgrade;
     public List<GameObject> activePanel = new List<GameObject>();
 
     public void OpenMenu()
@@ -49,6 +50,11 @@ public class MenuManager : MonoBehaviour
         activePanel.Add(hero);
     }
 
+    public void OpenUpgrade()
+    {
+        upgrade.SetActive(true);
+        activePanel.Add(upgrade);
+    }
 
     public void CloseMenu()
     {
@@ -85,6 +91,12 @@ public class MenuManager : MonoBehaviour
     {
         hero.SetActive(false);
         activePanel.Remove(hero);
+    }
+
+    public void CloseUpgrade()
+    {
+        upgrade.SetActive(false);
+        activePanel.Remove(upgrade);
     }
 
     void Update()
