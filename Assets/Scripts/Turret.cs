@@ -107,6 +107,14 @@ public class Turret : MonoBehaviour
     public void StatsUpdate()
     {
         //damage = bulletPrefab.GetComponent<Bullet>().damage;
-        damage = PlayerPrefs.GetInt("Turret1Damage");
+        
+        if (PlayerPrefs.GetInt("Turret1Damage") != 0)
+        {
+            damage = PlayerPrefs.GetInt("Turret1Damage");
+        }
+        else
+        {
+            damage = 50;
+        }
     } 
 }
