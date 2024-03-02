@@ -12,6 +12,7 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     private float countdown = 3f;
 
+    public GameObject[] enemy;
 
 
     public TMP_Text waveCountDownText;
@@ -31,6 +32,15 @@ public class WaveSpawner : MonoBehaviour
         countdown -= Time.deltaTime;
 
         waveCountDownText.text = Mathf.Round(countdown).ToString();
+
+        if(waveIndex >= 7)
+        {
+            enemy = GameObject.FindGameObjectsWithTag("Enemy");
+            if (enemy.Length == 0)
+            {
+                Time.timeScale = 0f;
+            }
+        }
     }
 
     IEnumerator SpawnWave()
@@ -39,8 +49,16 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < waveIndex; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.4f);
+            if (waveIndex <= 7)
+            {
+                SpawnEnemy();
+                yield return new WaitForSeconds(0.4f);
+            }
+            else
+            {
+                yield break;
+            }
+            
         }
 
     }
