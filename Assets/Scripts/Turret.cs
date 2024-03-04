@@ -116,5 +116,17 @@ public class Turret : MonoBehaviour
         {
             damage = 50;
         }
+
+        if (PlayerPrefs.GetInt("Turret1FireRate") != 0)
+        {
+            fireRate = PlayerPrefs.GetInt("Turret1FireRate");
+        }
+        else
+        {
+            fireRate = 1;
+        }
+
+
+
     } 
 }
