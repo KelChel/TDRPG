@@ -126,7 +126,14 @@ public class Turret : MonoBehaviour
             fireRate = 1;
         }
 
-
+        if (PlayerPrefs.GetInt("Turret1Range") != 0)
+        {
+            range = PlayerPrefs.GetInt("Turret1Range");
+        }
+        else
+        {
+            range = 1;
+        }
 
     } 
 }
