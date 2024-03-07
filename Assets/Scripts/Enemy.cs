@@ -2,22 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     public float speed = 5f;
-    public int health = 100;
+
+
+    public float startHealth = 100;
+    private float health;
+
     private Transform target;
     private int waypointIndex = 0;
 
+
+    public Image healthBar;
+
     private void Start()
     {
+        health = startHealth;
         target = Waypoints.points[0];
     }
 
     public void TakeDamage(int amount)
     {
         health -= amount;
+        healthBar.fillAmount = health / startHealth;
 
         if (health <=0)
         {

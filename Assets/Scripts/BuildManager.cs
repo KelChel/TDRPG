@@ -38,4 +38,9 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = turret;
     }
+
+    public void ResetTurretToBuild()
+    {
+        turretToBuild = null;
+    }
 }

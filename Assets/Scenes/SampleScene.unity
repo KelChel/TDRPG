@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09728182131936a4c837b61370cdfcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8678009962760930361, guid: 2eea594b6d304ec47946fe5d1181635c, type: 3}
+  enemyPrefab: {fileID: 4887898499674527957, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
   spawnpoint: {fileID: 1521780391}
   timeBetweenWaves: 5
   waveCountDownText: {fileID: 213130520}
@@ -5845,7 +5845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

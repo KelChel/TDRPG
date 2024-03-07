@@ -51,6 +51,8 @@ public class Node : MonoBehaviour {
 
         turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
         // Затем ресетнуть турель для постройки и поменять кнопку на скилл.
+        buildManager.ResetTurretToBuild();
         node.SetActive(false);
+        
     }
 }
