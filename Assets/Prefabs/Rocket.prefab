@@ -101,3 +101,4 @@ MonoBehaviour:
   damage: 50
   explosionRadius: 1
   impactEffect: {fileID: 5895375642022210270, guid: ba80e43e28f89dd49a2615b2ecba532e, type: 3}
+  bulletPrefab: {fileID: 0}

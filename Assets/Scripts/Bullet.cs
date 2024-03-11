@@ -10,8 +10,8 @@ public class Bullet : MonoBehaviour
     public int damage = 50;
     public float explosionRadius = 0f;
     public GameObject impactEffect;
+    public GameObject bulletPrefab;
 
-    
 
     public void Seek(Transform _target)
     {
@@ -21,6 +21,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StatsUpdate();
+        
         if (target == null) {
             Destroy(gameObject);
             return;
@@ -88,5 +90,9 @@ public class Bullet : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 
-    
+    public void StatsUpdate()
+    {
+        damage = PlayerPrefs.GetInt("Turret1Damage");
+    }
+
 }

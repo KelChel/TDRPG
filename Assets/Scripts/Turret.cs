@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour
 
     [Header("Attributes")]
 
-    public float damage = 50f;
+   // public float damage = 50f;
     public float range = 3f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
@@ -66,6 +66,7 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (target == null)
         {
             return;
@@ -93,7 +94,7 @@ public class Turret : MonoBehaviour
 
         if (bullet != null)
         {
-            bullet.damage = (int)damage;
+            
             bullet.Seek(target);
         }
     }
@@ -106,34 +107,8 @@ public class Turret : MonoBehaviour
 
     public void StatsUpdate()
     {
-        //damage = bulletPrefab.GetComponent<Bullet>().damage;
-        
-        if (PlayerPrefs.GetInt("Turret1Damage") != 0)
-        {
-            damage = PlayerPrefs.GetInt("Turret1Damage");
-        }
-        else
-        {
-            damage = 50;
-        }
 
-        if (PlayerPrefs.GetInt("Turret1FireRate") != 0)
-        {
-            fireRate = PlayerPrefs.GetInt("Turret1FireRate");
-        }
-        else
-        {
-            fireRate = 1;
-        }
-
-        if (PlayerPrefs.GetInt("Turret1Range") != 0)
-        {
-            range = PlayerPrefs.GetInt("Turret1Range");
-        }
-        else
-        {
-            range = 3;
-        }
+     //  damage = bulletPrefab.GetComponent<Bullet>().damage;
 
     } 
 }
