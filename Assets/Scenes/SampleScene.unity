@@ -1921,7 +1921,6 @@ GameObject:
   - component: {fileID: 933976822}
   - component: {fileID: 933976824}
   - component: {fileID: 933976823}
-  - component: {fileID: 933976825}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -4303,31 +4302,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &933976825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933976821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb6251643154cad41b1283878ecf7f5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemap: {fileID: 933976824}
-  targetTiles:
-  - {fileID: 11400000, guid: b93ed63f2b0f36340af80167e54c3d2b, type: 2}
-  - {fileID: 11400000, guid: 8b5eb68f7aa0aa44695127992cfccd20, type: 2}
-  - {fileID: 11400000, guid: d8e391e6f79969e4faaaf9c96ceb53a2, type: 2}
-  replacementTiles:
-  - {fileID: 11400000, guid: c4ccacb6e44096b4ab34fbfada329ab7, type: 2}
-  - {fileID: 11400000, guid: c4ccacb6e44096b4ab34fbfada329ab7, type: 2}
-  - {fileID: 11400000, guid: d9c09e28d0c51ad4aac3ef02bfd40c7a, type: 2}
-  initialRadius: 0
-  radiusIncreaseRate: 1
-  centerTilePosition: {x: 8, y: -4, z: 0}
-  replacementSpeed: 1
 --- !u!1 &960421654
 GameObject:
   m_ObjectHideFlags: 0
