@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8620050694959819070}
   - component: {fileID: 5997132589368663197}
   m_Layer: 0
-  m_Name: Enemy 2
+  m_Name: Skull
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  waveCost: 1
   startHealth: 100
   healthBar: {fileID: 634652138425648627}
 --- !u!135 &5997132589368663197

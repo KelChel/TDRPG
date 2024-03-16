@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 5f;
 
+    public int waveCost = 1;
 
     public float startHealth = 100;
     private float health;
 
     private Transform target;
     private int waypointIndex = 0;
+
 
 
     public Image healthBar;
