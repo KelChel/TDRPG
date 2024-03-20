@@ -15,11 +15,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        current_money = PlayerPrefs.GetInt("Current_money" , current_money);
-        moneycheck.text = current_money.ToString();
+        
     }
     void Update()
+
     {
+        
         if (gameEnded)
             return;
 
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Current_money", current_money);
             PlayerPrefs.Save();
             Debug.Log(current_money);
+            current_money = PlayerPrefs.GetInt("Current_money", current_money);
+            moneycheck.text = current_money.ToString();
         }
         else
         {
