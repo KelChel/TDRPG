@@ -1,113 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
-public class MenuManager : MonoBehaviour
+public class CanvasPanelManager : MonoBehaviour
 {
-    public GameObject menu;
-    public GameObject level;
-    public GameObject settings;
-    public GameObject bestiary;
-    public GameObject authors;
-    public GameObject hero;
-    public GameObject upgrade;
-    public List<GameObject> activePanel = new List<GameObject>();
+    public List<GameObject> canvasPanels; // Список всех панелей канваса
+    public GameObject currentPanel; // Текущая панель
 
-    public void OpenMenu()
+    // Метод для отображения указанной панели и скрытия текущей
+    public void ShowPanel(GameObject panelToShow)
     {
-        menu.SetActive(true);
-        activePanel.Add(menu);
-        Debug.Log("openMenu");
-    }
-
-    public void OpenLevel()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void OpenSettings()
-    {
-        settings.SetActive(true);
-        activePanel.Add(settings);
-    }
-
-    public void OpenBestiary()
-    {
-        bestiary.SetActive(true);
-        activePanel.Add(bestiary);
-    }
-
-    public void OpenAuthors()
-    {
-        authors.SetActive(true);
-        activePanel.Add(authors);
-    }
-    
-    public void OpenHero()
-    {
-        hero.SetActive(true);
-        activePanel.Add(hero);
-    }
-
-    public void OpenUpgrade()
-    {
-        upgrade.SetActive(true);
-        activePanel.Add(upgrade);
-    }
-
-    public void CloseMenu()
-    {
-        menu.SetActive(false);
-        activePanel.Remove(menu);
-        Debug.Log("openMenu");
-    }
-
-    public void CloseLevel()
-    {
-        level.SetActive(false);
-        activePanel.Remove(level);
-    }
-
-    public void CloseSettings()
-    {
-        settings.SetActive(false);
-        activePanel.Remove(settings);
-    }
-
-    public void CloseBestiary()
-    {
-        bestiary.SetActive(false);
-        activePanel.Remove(bestiary);
-    }
-
-    public void CloseAuthors()
-    {
-        authors.SetActive(false);
-        activePanel.Remove(authors);
-    }
-
-    public void CloseHero()
-    {
-        hero.SetActive(false);
-        activePanel.Remove(hero);
-    }
-
-    public void CloseUpgrade()
-    {
-        upgrade.SetActive(false);
-        activePanel.Remove(upgrade);
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Скрываем текущую панель
+        if (currentPanel != null)
         {
-        
-            if (activePanel.Count > 0)
-            {
-                activePanel[activePanel.Count - 1].SetActive(false); 
-            }
+            currentPanel.SetActive(false);
+        }
+
+        // Проверяем, содержится ли указанная панель в списке
+        if (canvasPanels.Contains(panelToShow))
+        {
+            // Отображаем указанную панель и обновляем текущую
+            panelToShow.SetActive(true);
+            currentPanel = panelToShow;
+        }
+        else
+        {
+            Debug.LogError("Panel is not in the canvas panels list!");
         }
     }
 }
