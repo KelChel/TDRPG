@@ -12,7 +12,10 @@ public class Bullet : MonoBehaviour
     public GameObject impactEffect;
     public GameObject bulletPrefab;
 
-
+    private void Start()
+    {
+        StatsUpdate();
+    }
     public void Seek(Transform _target)
     {
         target = _target;

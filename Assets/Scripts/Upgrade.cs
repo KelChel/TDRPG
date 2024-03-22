@@ -15,8 +15,11 @@ public class Upgrade : MonoBehaviour
 
     public void heroUpgrade()
     {
-        
-      
+        if (PlayerPrefs.GetInt("Turret1Damage") == 0)
+        {
+            PlayerPrefs.SetInt("Turret1Damage", 50);
+        }
+
         int count = PlayerPrefs.GetInt("Turret1Damage");
         PlayerPrefs.SetInt("Turret1Damage", count + 1);
         Debug.Log(count + 1);

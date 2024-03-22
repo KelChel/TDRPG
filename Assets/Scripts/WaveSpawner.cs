@@ -2,30 +2,38 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using System.Collections.Generic;
+
+[Serializable]
+public class Wave
+{
+    public List<GameObject> enemyPrefabs;
+    public float timeBetweenSpawn;
+}
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
-
+    public Wave[] waves;
     public Transform spawnpoint;
-
-    public float timeBetweenWaves = 5f;
-    private float countdown = 3f;
-
-
-
+    public TilemapEraser tilemapEraser;
     public TMP_Text waveCountDownText;
-
-
+    public float timeBetweenWaves = 15f;
+    private float countdown = 3f;
     private int waveIndex = 0;
+
+    private void Start()
+    {
+
+    }
 
     private void Update()
     {
-        if (countdown <= 0f)
+        if (countdown <= 0f && waveIndex < waves.Length)
         {
-            StartCoroutine(SpawnWave());
+            StartCoroutine(SpawnWave(waves[waveIndex]));
             countdown = timeBetweenWaves;
-
+            tilemapEraser.StartEraser();
         }
 
         countdown -= Time.deltaTime;
@@ -33,19 +41,19 @@ public class WaveSpawner : MonoBehaviour
         waveCountDownText.text = Mathf.Round(countdown).ToString();
     }
 
-    IEnumerator SpawnWave()
+    IEnumerator SpawnWave(Wave wave)
     {
         waveIndex++;
 
-        for (int i = 0; i < waveIndex; i++)
+        foreach (GameObject enemyPrefab in wave.enemyPrefabs)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.4f);
+            SpawnEnemy(enemyPrefab);
+            yield return new WaitForSeconds(wave.timeBetweenSpawn);
         }
-
+        
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemyPrefab)
     {
         Instantiate(enemyPrefab, spawnpoint.position, spawnpoint.rotation);
     }
