@@ -2940,7 +2940,6 @@ MonoBehaviour:
   tilemap: {fileID: 232303843}
   startPoint: {x: 8, y: -4, z: 0}
   initialRadius: 1
-  increaseRate: 1
   timer: 3
 --- !u!1 &341474527
 GameObject:
@@ -7268,7 +7267,9 @@ MonoBehaviour:
   - {fileID: 1043411187}
   - {fileID: 1625601968}
   - {fileID: 960421655}
-  path2Points: []
+  path2Points:
+  - {fileID: 1521780391}
+  - {fileID: 960421655}
 --- !u!4 &1036231586
 Transform:
   m_ObjectHideFlags: 0

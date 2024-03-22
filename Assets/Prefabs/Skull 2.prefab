@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   startHealth: 200
-  pathNumber: 1
+  pathNumber: 2
   healthBar: {fileID: 4700362995722122695}
 --- !u!135 &2699937959132180292
 SphereCollider:
