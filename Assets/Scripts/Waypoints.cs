@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-    public static Transform[] points;
+    // Массивы точек для каждого пути
+    public Transform[] path1Points;
+    public Transform[] path2Points;
 
-    private void Awake()
+    // Метод для получения точек определенного пути
+    public Transform[] GetWaypoints(int pathNumber)
     {
-        points = new Transform[transform.childCount];
-        for (int i = 0; i < points.Length; i++)
+        return pathNumber switch
         {
-            points[i] = transform.GetChild(i);
-        }
+            1 => path1Points,
+            2 => path2Points,
+            // Добавьте case для других путей при необходимости
+            _ => path1Points,// По умолчанию вернуть путь 1
+        };
     }
 }

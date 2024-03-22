@@ -1,29 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     public float speed = 5f;
-
-    public int waveCost = 1;
-
     public float startHealth = 100;
-    private float health;
+    public int pathNumber = 1;
 
+    private float health;
+    private Waypoints waypoints;
     private Transform target;
     private int waypointIndex = 0;
-
-
+    private Transform[] points;
 
     public Image healthBar;
+    
+
+    private Vector3 originalScale; 
+    private Vector3 originalHealthScale;
 
     private void Start()
     {
+        waypoints = GameObject.FindObjectOfType<Waypoints>();
+        points = waypoints.GetWaypoints(pathNumber);
+        target = points[0];
+
         health = startHealth;
-        target = Waypoints.points[0];
+
+        // Сохраняем оригинальный масштаб врага
+        originalScale = transform.localScale;
+        originalHealthScale = healthBar.rectTransform.localScale;
+
+
     }
 
     public void TakeDamage(int amount)
@@ -31,45 +41,58 @@ public class Enemy : MonoBehaviour
         health -= amount;
         healthBar.fillAmount = health / startHealth;
 
-        if (health <=0)
+        if (health <= 0)
         {
             Die();
         }
-
-        void Die()
-        {
-            Destroy(gameObject);
-        }
-
     }
 
     private void Update()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(speed * Time.deltaTime * dir.normalized, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.1f)
         {
             GetNextWaypoint();
-        }   
+        }
+
+        // Поворачиваем врага
+        if (dir.x < 0)
+        {
+            // Если точка находится слева от врага, повернуть его влево
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            healthBar.rectTransform.localScale = new Vector3(-originalHealthScale.x, originalHealthScale.y, originalHealthScale.z);
+        }
+        else
+        {
+            // Если точка находится справа от врага, повернуть его вправо
+            transform.localScale = originalScale;
+            healthBar.rectTransform.localScale = originalHealthScale;
+        }
     }
 
     void GetNextWaypoint()
     {
-        if (waypointIndex >= Waypoints.points.Length - 1)
+        if (waypointIndex >= points.Length - 1)
         {
             EndPath();
             return;
         }
 
         waypointIndex++;
-        target = Waypoints.points[waypointIndex];
+        target = points[waypointIndex];
     }
 
     void EndPath()
     {
         PlayerStats.Lives--;
-        Destroy (gameObject);
+        Destroy(gameObject);
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
 }

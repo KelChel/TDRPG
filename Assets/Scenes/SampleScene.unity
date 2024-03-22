@@ -2941,7 +2941,7 @@ MonoBehaviour:
   startPoint: {x: 8, y: -4, z: 0}
   initialRadius: 1
   increaseRate: 1
-  timer: 5
+  timer: 3
 --- !u!1 &341474527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,23 +3160,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemyPrefabs:
-    - {fileID: 408525112439820077, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
-    - {fileID: 408525112439820077, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
+    - {fileID: 653465403909668418, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
     timeBetweenSpawn: 2
   - enemyPrefabs:
-    - {fileID: 408525112439820077, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
-    - {fileID: 408525112439820077, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
-    - {fileID: 408525112439820077, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
-    - {fileID: 408525112439820077, guid: 81f23b37ef926b94d8f06b131ff0c7ec, type: 3}
+    - {fileID: 653465403909668418, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
     timeBetweenSpawn: 2
   - enemyPrefabs:
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
-    - {fileID: 408525112439820077, guid: 9eaeabe6cf5648f49a36275c8f53a451, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
+    - {fileID: 653465403909668418, guid: c286f89d5b5b06d48b01d6dddeb1ef5f, type: 3}
     timeBetweenSpawn: 2
   spawnpoint: {fileID: 1521780391}
   tilemapEraser: {fileID: 232303844}
@@ -7257,6 +7257,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e80548b8e7f234289da856a8cff27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path1Points:
+  - {fileID: 1521780391}
+  - {fileID: 562369172}
+  - {fileID: 1201737897}
+  - {fileID: 593192967}
+  - {fileID: 341474528}
+  - {fileID: 1363599512}
+  - {fileID: 516901432}
+  - {fileID: 1043411187}
+  - {fileID: 1625601968}
+  - {fileID: 960421655}
+  path2Points: []
 --- !u!4 &1036231586
 Transform:
   m_ObjectHideFlags: 0

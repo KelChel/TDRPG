@@ -7,11 +7,11 @@ public class TilemapEraser : MonoBehaviour
 {
     public Tilemap tilemap;
     public Vector3Int startPoint;
-    public float initialRadius = 1f;
-    public float increaseRate = 1f; // количество единиц, на которое увеличивается радиус каждую секунду
+    public int initialRadius = 1;
+    //public float increaseRate = 1f; // количество единиц, на которое увеличивается радиус каждую секунду
     public float timer = 5f;
 
-    private float currentRadius;
+    private int currentRadius;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class TilemapEraser : MonoBehaviour
     {
         while (true)
         {
-            EraseTilesInCircle(startPoint, Mathf.RoundToInt(currentRadius));
+            EraseTilesInCircle(startPoint, currentRadius);
             //currentRadius += increaseRate;
             currentRadius += 1;
             yield return new WaitForSeconds(timer);

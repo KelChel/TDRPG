@@ -66,16 +66,21 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (target == null)
         {
             return;
         }
 
+        
+
         Vector3 dir = target.position - transform.position;
         Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, dir);
-        partToRotate.transform.rotation = Quaternion.RotateTowards(partToRotate.transform.rotation, toRotation, turnSpeed*Time.deltaTime);
-        
+        partToRotate.transform.rotation = Quaternion.RotateTowards(partToRotate.transform.rotation, toRotation, turnSpeed * Time.deltaTime);
+
+        float scaleX = Mathf.Sign(dir.x);
+        transform.localScale = new Vector3(scaleX, 1f, 1f);
+
         if (fireCountdown <= 0f)
         {
             Shoot();

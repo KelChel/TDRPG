@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CanvasPanelManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public List<GameObject> canvasPanels; // Список всех панелей канваса
     public GameObject currentPanel; // Текущая панель
