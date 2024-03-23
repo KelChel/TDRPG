@@ -32,7 +32,6 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StatsUpdate();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -110,10 +109,4 @@ public class Turret : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    public void StatsUpdate()
-    {
-
-     //  damage = bulletPrefab.GetComponent<Bullet>().damage;
-
-    } 
 }

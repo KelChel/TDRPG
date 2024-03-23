@@ -19,12 +19,14 @@ public class WaveSpawner : MonoBehaviour
     public TilemapEraser tilemapEraser;
     public TMP_Text waveCountDownText;
     public float timeBetweenWaves = 15f;
+    public GameObject endGame;
+
     private float countdown = 3f;
     private int waveIndex = 0;
 
     private void Start()
     {
-
+        StartCoroutine(StartTilemapEraser(countdown));
     }
 
     private void Update()
@@ -33,12 +35,25 @@ public class WaveSpawner : MonoBehaviour
         {
             StartCoroutine(SpawnWave(waves[waveIndex]));
             countdown = timeBetweenWaves;
-            tilemapEraser.StartEraser();
+            
         }
 
         countdown -= Time.deltaTime;
 
-        waveCountDownText.text = Mathf.Round(countdown).ToString();
+        
+
+        if (waveIndex >= waves.Length)
+        {
+            waveCountDownText.text = "";
+            if (AllEnemiesDefeated()) {
+                endGame.SetActive(true);
+            }
+            
+        }
+        else
+        {
+            waveCountDownText.text = Mathf.Round(countdown).ToString();
+        }
     }
 
     IEnumerator SpawnWave(Wave wave)
@@ -56,5 +71,23 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemyPrefab)
     {
         Instantiate(enemyPrefab, spawnpoint.position, spawnpoint.rotation);
+    }
+
+    bool AllEnemiesDefeated()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy != null) // Проверяем, жив ли враг
+                return false; // Если хотя бы один враг жив, возвращаем false
+        }
+        return true; // Если все враги уничтожены, возвращаем true
+    }
+
+    IEnumerator StartTilemapEraser(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        tilemapEraser.StartEraser();
     }
 }
