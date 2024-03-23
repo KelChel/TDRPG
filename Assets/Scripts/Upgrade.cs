@@ -13,7 +13,7 @@ public class Upgrade : MonoBehaviour
         }
     }
 
-    public void heroUpgrade()
+    public void HeroUpgrade()
     {
         if (PlayerPrefs.GetInt("Turret1Damage") == 0)
         {

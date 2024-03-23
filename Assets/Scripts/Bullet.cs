@@ -95,7 +95,15 @@ public class Bullet : MonoBehaviour
 
     public void StatsUpdate()
     {
-        damage = PlayerPrefs.GetInt("Turret1Damage");
+        if (PlayerPrefs.GetInt("Turret1Damage")== 0)
+        {
+            damage = 50;
+        }
+        else
+        {
+            damage = PlayerPrefs.GetInt("Turret1Damage");
+        }
+        
     }
 
 }
