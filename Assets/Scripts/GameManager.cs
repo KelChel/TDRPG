@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
    
     private bool gameEnded = false;
+   
+    public TextMeshProUGUI moneycheck;
     
+
+   
     void Update()
+
     {
+        
         if (gameEnded)
             return;
 
@@ -24,4 +32,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
         Time.timeScale = 0;
     }
-}
+
+   
+
+    }
+
+
