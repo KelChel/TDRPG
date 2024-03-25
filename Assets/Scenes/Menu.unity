@@ -1135,7 +1135,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1674909932}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: Buy, Assembly-CSharp
           m_MethodName: BuyUpgrade
           m_Mode: 1
           m_Arguments:
@@ -1499,7 +1499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1551615191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1609,10 +1609,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1674909930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb8ebe7cf0f84a4681f77a969a698dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 05137b96eed5b9a40a507d99b68cc0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_money: 100
+  current_money: 200
   upgradehero: {fileID: 1239521653}
   moneycheck: {fileID: 1780765354}
 --- !u!1 &1743296099
