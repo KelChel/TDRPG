@@ -15,12 +15,12 @@ public class Buy : MonoBehaviour
         current_money = PlayerPrefs.GetInt("Current_money", current_money);
         moneycheck.text = current_money.ToString();
     }
-    public void BuyUpgrade()
+    public void BuyDamageUpgrade(string turretName)
     {
         if (current_money >= 10)
         {
 
-            upgradehero.heroUpgrade();
+            upgradehero.DamageUpgrade(turretName, 5);
             current_money = current_money - 10;
             moneycheck.text = current_money.ToString();
             PlayerPrefs.SetInt("Current_money", current_money);
@@ -32,5 +32,30 @@ public class Buy : MonoBehaviour
         {
             Debug.Log("Недосаточно денег");
         }
+
+
     }
+
+    public void BuyRangeUpgrade(string turretName)
+    {
+        if (current_money >= 20)
+        {
+
+            upgradehero.RangeUpgrade(turretName);
+            current_money = current_money - 20;
+            moneycheck.text = current_money.ToString();
+            PlayerPrefs.SetInt("Current_money", current_money);
+            PlayerPrefs.Save();
+            Debug.Log(current_money);
+
+        }
+        else
+        {
+            Debug.Log("Недосаточно денег");
+        }
+
+
+    }
+
+
 }

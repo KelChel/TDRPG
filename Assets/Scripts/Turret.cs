@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    
+
     private Transform target;
 
 
@@ -27,12 +27,13 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        StatsUpdate();
     }
 
     void UpdateTarget()
@@ -71,7 +72,7 @@ public class Turret : MonoBehaviour
             return;
         }
 
-        
+
 
         Vector3 dir = target.position - transform.position;
         Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, dir);
@@ -98,7 +99,7 @@ public class Turret : MonoBehaviour
 
         if (bullet != null)
         {
-            
+
             bullet.Seek(target);
         }
     }
@@ -109,4 +110,18 @@ public class Turret : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+    public void StatsUpdate()
+    {
+
+        if (PlayerPrefs.GetFloat("Turret1Range") == 0f)
+        {
+            range = 3f;
+        }
+        else
+        {
+            range = PlayerPrefs.GetFloat("Turret1Range");
+        }
+
+
+    }
 }

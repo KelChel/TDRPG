@@ -5,24 +5,31 @@ using UnityEngine;
 public class Upgrade : MonoBehaviour
 {
 
-    void Start()
+
+    public void DamageUpgrade(string turretName, int damage)
     {
-        if (PlayerPrefs.GetInt("Turret1Damage") == 0)
+        
+        if (PlayerPrefs.GetInt(turretName) == 0)
         {
-            PlayerPrefs.SetInt("Turret1Damage", 50);
+            PlayerPrefs.SetInt(turretName, 50);
         }
+
+        int count = PlayerPrefs.GetInt(turretName);
+        PlayerPrefs.SetInt(turretName, count + damage);
+        Debug.Log(count + damage);
     }
 
-    public void HeroUpgrade()
+    public void RangeUpgrade(string turretName)
     {
-        if (PlayerPrefs.GetInt("Turret1Damage") == 0)
+
+        if (PlayerPrefs.GetFloat(turretName) == 0f)
         {
-            PlayerPrefs.SetInt("Turret1Damage", 50);
+            PlayerPrefs.SetFloat(turretName, 3f);
         }
 
-        int count = PlayerPrefs.GetInt("Turret1Damage");
-        PlayerPrefs.SetInt("Turret1Damage", count + 1);
-        Debug.Log(count + 1);
+        float count = PlayerPrefs.GetFloat(turretName);
+        PlayerPrefs.SetFloat(turretName, count + 0.5f);
+        Debug.Log(count + 0.5);
     }
 
 }
