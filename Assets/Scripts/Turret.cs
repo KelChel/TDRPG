@@ -122,6 +122,16 @@ public class Turret : MonoBehaviour
             range = PlayerPrefs.GetFloat("Turret1Range");
         }
 
-
+        if (PlayerPrefs.GetFloat("Turret1FireRate") == 0f)
+        {
+            fireRate = 1f;
+        }
+        else
+        {
+            fireRate = PlayerPrefs.GetFloat("Turret1FireRate");
+        }
     }
+
+
+
 }

@@ -20,6 +20,8 @@ public class WaveSpawner : MonoBehaviour
     public TMP_Text waveCountDownText;
     public float timeBetweenWaves = 15f;
     public GameObject endGame;
+    int money = 0;
+    
 
     private float countdown = 3f;
     private int waveIndex = 0;
@@ -45,8 +47,14 @@ public class WaveSpawner : MonoBehaviour
         if (waveIndex >= waves.Length)
         {
             waveCountDownText.text = "";
-            if (AllEnemiesDefeated()) {
+            if (AllEnemiesDefeated() && !endGame.activeSelf) {
                 endGame.SetActive(true);
+                Debug.Log(money);
+                money = PlayerPrefs.GetInt("Current_money", money) + 300;
+                Debug.Log(money);
+                PlayerPrefs.SetInt("Current_money", money);
+                PlayerPrefs.Save();
+                Debug.Log("Reward +");
             }
             
         }

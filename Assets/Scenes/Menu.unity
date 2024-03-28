@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05137b96eed5b9a40a507d99b68cc0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_money: 200
+  current_money: 1200
   upgradehero: {fileID: 2160746310365903702}
   moneycheck: {fileID: 705796900}
 --- !u!1 &1332848516
@@ -617,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801268903369983012, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2675090937047554433, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -823,6 +823,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 372948399}
+    - target: {fileID: 7334949794875498969, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334949794875498969, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1249116109}
+    - target: {fileID: 7334949794875498969, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyFireRateUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334949794875498969, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Buy, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334949794875498969, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Turret1FireRate
+      objectReference: {fileID: 0}
     - target: {fileID: 7499397514513904405, guid: 291c8bcede2bbc446ae40784536b3e5a, type: 3}
       propertyPath: m_Name
       value: MenuCanvas

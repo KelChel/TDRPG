@@ -6,12 +6,17 @@ using TMPro;
 public class Buy : MonoBehaviour
 {
 
-    public int current_money = 200;
+    public int current_money;
     public Upgrade upgradehero;
     public TextMeshProUGUI moneycheck;
     
     public void Start()
     {
+        if (current_money != 0 & PlayerPrefs.GetInt ("Current_money") == 0) //Если игрок потратит все деньги ему бесплатно дадут 1200
+        {
+            PlayerPrefs.SetInt("Current_money", current_money);
+            PlayerPrefs.Save();
+        }
         current_money = PlayerPrefs.GetInt("Current_money", current_money);
         moneycheck.text = current_money.ToString();
     }
@@ -57,5 +62,26 @@ public class Buy : MonoBehaviour
 
     }
 
+    public void BuyFireRateUpgrade(string turretName)
+    {
+        if (current_money >= 30)
+        {
 
+            upgradehero.FireRateUpgrade(turretName);
+            current_money = current_money - 20;
+            moneycheck.text = current_money.ToString();
+            PlayerPrefs.SetInt("Current_money", current_money);
+            PlayerPrefs.Save();
+            Debug.Log(current_money);
+
+        }
+        else
+        {
+            Debug.Log("Недосаточно денег");
+        }
+
+
+    }
+
+ 
 }

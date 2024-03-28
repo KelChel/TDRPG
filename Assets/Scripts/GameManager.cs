@@ -6,19 +6,20 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-   
+
     private bool gameEnded = false;
-   
-    public TextMeshProUGUI moneycheck;
     
 
-   
+
+
     void Update()
 
     {
-        
+
         if (gameEnded)
             return;
+
+
 
         if (PlayerStats.Lives <= 0)
         {
@@ -33,8 +34,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-   
+}
 
-    }
+    
 
 

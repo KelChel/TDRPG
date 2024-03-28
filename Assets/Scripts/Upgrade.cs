@@ -32,4 +32,17 @@ public class Upgrade : MonoBehaviour
         Debug.Log(count + 0.5);
     }
 
+    public void FireRateUpgrade(string turretName)
+    {
+
+        if (PlayerPrefs.GetFloat(turretName) == 0f)
+        {
+            PlayerPrefs.SetFloat(turretName, 3f);
+        }
+
+        float count = PlayerPrefs.GetFloat(turretName);
+        PlayerPrefs.SetFloat(turretName, count + 0.5f);
+        Debug.Log(count + 0.5);
+    }
+
 }
