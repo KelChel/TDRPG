@@ -47,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
             waveCountDownText.text = "";
             if (AllEnemiesDefeated()) {
                 endGame.SetActive(true);
+                Time.timeScale = 0f;
             }
             
         }

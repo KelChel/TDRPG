@@ -6,7 +6,7 @@ using TMPro;
 public class Buy : MonoBehaviour
 {
 
-    public int current_money = 200;
+    private int current_money;
     public Upgrade upgradehero;
     public TextMeshProUGUI moneycheck;
     
