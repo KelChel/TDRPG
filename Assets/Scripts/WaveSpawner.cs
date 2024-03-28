@@ -49,12 +49,7 @@ public class WaveSpawner : MonoBehaviour
             waveCountDownText.text = "";
             if (AllEnemiesDefeated() && !endGame.activeSelf) {
                 endGame.SetActive(true);
-                Debug.Log(money);
-                money = PlayerPrefs.GetInt("Current_money", money) + 300;
-                Debug.Log(money);
-                PlayerPrefs.SetInt("Current_money", money);
-                PlayerPrefs.Save();
-                Debug.Log("Reward +");
+                
             }
             
         }

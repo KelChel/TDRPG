@@ -12,13 +12,10 @@ public class Buy : MonoBehaviour
     
     public void Start()
     {
-        if (current_money != 0 & PlayerPrefs.GetInt ("Current_money") == 0) //Если игрок потратит все деньги ему бесплатно дадут 1200
-        {
+        
+        
             PlayerPrefs.SetInt("Current_money", current_money);
-            PlayerPrefs.Save();
-        }
-        current_money = PlayerPrefs.GetInt("Current_money", current_money);
-        moneycheck.text = current_money.ToString();
+            moneycheck.text = current_money.ToString();
     }
     public void BuyDamageUpgrade(string turretName)
     {
